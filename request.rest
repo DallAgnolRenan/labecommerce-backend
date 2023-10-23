@@ -1,0 +1,99 @@
+
+//                         ENDPOINT USERS
+
+# Get all users
+GET http://localhost:3003/users
+###
+
+# Create user
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+  "id": "user11",
+  "name": "Nome do Usuário 11",
+  "email": "usuario11@email.com",
+  "password": "333441592rR*"
+}
+###
+
+# Delete user by id
+DELETE http://localhost:3003/users/user5
+###
+
+//                         ENDPOINT PRODUDCTS
+
+# Get all products funcionalidades 1
+GET http://localhost:3003/products
+###
+
+# Get all products funcionalidades 2
+GET http://localhost:3003/products?name=Produto 1
+###
+
+# Create product
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+  "id": "product11",
+  "name": "Nome do Produto 11",
+  "price": 49.99,
+  "description": "Descrição do Produto 8",
+  "image_url": "url_imagem8.jpg"
+}
+###
+
+# Edit product by id
+PUT http://localhost:3003/products/product1
+Content-Type: application/json
+
+{
+  "name": "Produto 1",
+  "price": 293333.99,
+  "description": "Descrição do Produto 1",
+  "image_url": "url_imagem1.jpg"
+}
+###
+
+//                          ENDPOINT PURCHASES
+
+# Get all purchases
+GET http://localhost:3003/purchases
+###
+
+# Get purchase by id
+GET http://localhost:3003/purchases/P001
+###
+# Create purchase
+
+### 
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+  "id": "P00933",
+  "buyer": "user2",
+  "products": [
+    {
+      "id": "product1",
+      "quantity": 2
+    },
+    {
+      "id": "product2",
+      "quantity": 1
+    }
+  ]
+}
+
+### Response
+# status 201 CREATED
+{
+  "message": "Pedido realizado com sucesso"
+}
+###
+
+# Delete purchase by id
+DELETE http://localhost:3003/purchases/P004
+###
+
